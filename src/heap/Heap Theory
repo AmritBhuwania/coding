@@ -1,0 +1,22 @@
+```Link: https://youtu.be/hW8PrQrvMNc
+Lectures by: Aditya Verma```
+
+1. Identification that a problem is based on heaps:
+a) K
+b) Largest/Smallest
+
+2. K + smallest = max heap problem
+
+3. K + largest = min heap problem
+
+4. Importance of K: 
+Since, the questions are mostly based on sorting which would make complexity as nlogn.
+Hence, To bring the complexity of a solution from (nlogn) to (nlogK)
+
+5. Basic Implementation syntax
+``` In Java, by default, it is a min-heap.
+Min Heap:
+PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+Max Heap: Using comparator to make it a max heap.
+PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a); ```
