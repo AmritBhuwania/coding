@@ -6,6 +6,9 @@ import java.util.Arrays;
  * @author amrit
  * Link: https://atcoder.jp/contests/dp/tasks/dp_c
  * https://youtu.be/jQjnQJ9NPOY
+ * 
+ * Space complexity: O(nk) n: number of activity, k: number of days
+ * Time complexity: O(n * k^2)
  */
 public class MaxHappiness {
 
