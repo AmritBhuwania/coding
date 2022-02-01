@@ -23,9 +23,7 @@ public class Altimetrik {
 		Set<String> ans = emps.stream()
 				.filter(emp->!set.add(emp.getName())).map(emp->emp.getName()).collect(Collectors.toSet());
 		System.out.println(ans);
-
 	}
-
 }
 
 class Employee {
@@ -64,6 +62,5 @@ class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", age=" + age + "]";
 	}
-
 
 }
