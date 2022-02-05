@@ -1,0 +1,3 @@
+- Problem with collections is that they are not synchronized
+- Even if we use the Collections.synchronize method, though synchronization is achieved it is
+inefficient because the threads acquire the intrinsic lock
