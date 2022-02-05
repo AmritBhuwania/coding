@@ -1,0 +1,11 @@
+- Whenever we execute a program the JVM creates a main thread. This is the last thread to complete execution
+
+- When we create threads(using runnable or subclassing thread class) those are created from the main thread
+- These are called worker threads
+
+- JVM also creates daemon thread for garbage collection
+
+- Daemon threads run in the background. they are usually low priority threads
+
+- We can create daemon threads as well. Primarily worker threads are not interrupted by JVM but daemon threads are.
+- That is a daemon thread is terminated by the JVM once worker threads have finished their execution.

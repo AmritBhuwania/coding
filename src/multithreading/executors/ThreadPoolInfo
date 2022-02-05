@@ -1,0 +1,4 @@
+Creating and managing threads is expensive
+Thread pools and executors handle this on our behalf
+They efficiently reuse threads by keeping threads alive and reusing them later
+Internally thread pools are queues
