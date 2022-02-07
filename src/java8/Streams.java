@@ -39,8 +39,5 @@ public class Streams {
 		
 		Arrays.stream(array).collect(Collectors.toList());
 		 
-		
-
-
 	} 
 }
