@@ -1,35 +1,40 @@
-package arrays;
+package stack;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
 /**
  * @author amrit
- * Find the previous greater element present before the current element in the array
+ * Find the next greater element after the current element in the array
  * eg. Input: { 18, 3, 19, 23, 5, 21, 9 }
- * 	 Output : {-1, 18, -1, -1, 23, 23, 21}
+ * 	 Output : {19, 19, 23, -1, 21, -1, -1}
+ * 
+ * Read NextGreater2 for better code
  */
-public class PrevGreater {
+public class NextGreater {
 
 	public static void main(String[] args) {
 		int arr[] = { 18, 3, 19, 23, 5, 21, 9 };
 		int n = arr.length;
-		printPGE(arr, n);
+		printNGE(arr, n);
 	}
 
-	static void printPGE(int ar[], int n) {
+	static void printNGE(int ar[], int n) {
 
 		Stack<Integer> stack = new Stack<Integer>();
 		List<Integer> ans = new ArrayList<Integer>();
 		int size = ar.length;
 
-		stack.add(ar[0]);
+		stack.add(ar[size-1]);
 		ans.add(-1);
 		int peek;
 
-		for (int i = 1; i < size; ++i) {
+		for (int i = size - 2; i >= 0; --i) {
+			
 			int curr = ar[i];
+			System.out.println(curr);
 
 			peek = stack.peek();
 
@@ -62,6 +67,7 @@ public class PrevGreater {
 				}
 			}
 		}
+		Collections.reverse(ans);
 		System.out.println(ans);
 	}
 }
