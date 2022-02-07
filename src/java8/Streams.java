@@ -38,11 +38,7 @@ public class Streams {
 		Stream.of(array).forEach(System.out::print);
 		
 		Arrays.stream(array).collect(Collectors.toList());
-		
-		/**
-		 * (Date-time API)Joda time
-		 */
-		LocalDateTime ldt = LocalDateTime.now();
+		 
 		
 
 
