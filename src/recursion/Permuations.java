@@ -17,7 +17,7 @@ public class Permuations {
 		permutations("", "abc");
 		System.out.println(permutationList("", "abc"));
 		System.out.println(permutationCount("", "abc"));
-
+		
 	}
 
 	static void permutations(String p , String up){
@@ -31,6 +31,7 @@ public class Permuations {
 		for (int i = 0; i <= p.length(); ++i) {
 			String first = p.substring(0, i);
 			String second = p.substring(i, p.length());
+			System.out.println(first + "-" + ch + "-" + second);
 			permutations(first + ch + second, up.substring(1));
 		}
 	}

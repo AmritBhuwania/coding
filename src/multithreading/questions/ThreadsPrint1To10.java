@@ -1,4 +1,4 @@
-package misc;
+package multithreading.questions;
 
 
 public class ThreadsPrint1To10 {

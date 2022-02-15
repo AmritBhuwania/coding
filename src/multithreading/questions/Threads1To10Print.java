@@ -1,10 +1,9 @@
-package misc;
+package multithreading.questions;
 
 
 public class Threads1To10Print {
 
 	private volatile Integer count = 1;
-	private volatile Integer threadIdToRun = 1;
 
 	private Object object = new Object();
 
