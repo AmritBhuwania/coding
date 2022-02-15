@@ -33,6 +33,7 @@ public class ConnectRopesToMinimiseCost {
 
 	static void minimiseRopeCost(int[] ar, int k) {
 
+		// use minimum heap since we need to poll the minimum values only
 		PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
 		for (int i = 0; i < ar.length; i++) {

@@ -25,8 +25,8 @@ public class SumOfElementsBetweenk1Smallestk2Smallest {
 		int k2 = 5;
 		int[] ar = {2,4,1,3,5};
 
-		int first = minimiseRopeCost(ar, k1);
-		int second = minimiseRopeCost(ar, k2);
+		int first = findKthSmallestElement(ar, k1);
+		int second = findKthSmallestElement(ar, k2);
 
 		int sum = 0;
 		for (int i = 0; i < ar.length; i++) {
@@ -37,7 +37,7 @@ public class SumOfElementsBetweenk1Smallestk2Smallest {
 		System.out.println(sum);
 	}
 
-	static int minimiseRopeCost(int[] ar, int k) {
+	static int findKthSmallestElement(int[] ar, int k) {
 
 		PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b) -> b - a);
 

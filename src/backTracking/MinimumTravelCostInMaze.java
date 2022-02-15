@@ -24,7 +24,6 @@ public class MinimumTravelCostInMaze {
 
 	private static void minimizeCost(int[][] ar, boolean [][] vis, int row, int col, int minValue) {
 
-
 		if (row == ar.length -1 && col == ar[0].length -1) {
 			minValue += ar[row][col];
 			if (minValue < min) {
