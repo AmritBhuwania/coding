@@ -2,7 +2,7 @@ package binarySearch;
 
 /*
  * Given weights in an array and maximum num of days for work,
- * find the minimize the maximum weight to be carried each day
+ * minimize the maximum weight to be carried each day
  * so that the complete weight can be loaded within required number of days.
  */
 
@@ -15,10 +15,9 @@ public class MinimizeWeights {
 		System.out.println(ans);
 	}
 
+	static int findMinWeight(int[] nums, int maxDaysAllowed) {
 
-	static int findMinWeight(int[] nums, int maxPiecesAllowed) {
-
-		int pieces = 1;
+		int days = 1;
 		int start = 0;
 		int end = 0;
 
@@ -29,32 +28,31 @@ public class MinimizeWeights {
 
 		while (start < end) {
 
+			/*
+			 * Start with a weight which is half of the minimum and total weights
+			 */
 			int mid = start + (end-start)/2;
 
 			int sum = 0;
-			pieces = 1;
+			days = 1;
 
 			for (int num : nums) {
 				if (sum + num <= mid) {
 					sum += num;
 				} else {
 					sum = num;
-					pieces++;
+					days++;
 				}
 			}
 
-			if (pieces > maxPiecesAllowed) {
+			if (days > maxDaysAllowed) {
 				start = mid + 1; 
 			} else {
 				end = mid;
 			}
 		}
 
-		System.out.println(pieces);
+		System.out.println(days);
 		return end;
-
 	}
-
-
-
 }
