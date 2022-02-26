@@ -1,0 +1,56 @@
+1. Design a LRU Cache
+
+Ans: 
+Refer: https://www.geeksforgeeks.org/lru-cache-implementation/
+2 ways:
+a) Doubly Ended Queue + HashSet
+b) LinkedHashMap + HashSet
+
+2. Design a MFU(most frequently used) cache.
+
+Possible ans:
+Use HashSet + Heap
+
+HashSet: For storing the keys
+Min Heap: Will store a pair(Element and its frequency)
+
+*Insert Function:* [O(log n)]
+First check in hashset if key is present.
+If present, then get object from heap, increment the freq and insert it back.
+If not present,  then 2 cases:  
+a) Cache size if full: poll from heap[O(1)]. Get the element and removed it from hashSet too[O(1)]. And finally, insert the new element in hashset
+as well as heap(with freq = 1)
+b) if cache is not completely full: Directly insert in hashset as well as heap(with freq = 1)
+
+*Delete Function:* 
+Poll from heap[O(1)]. Get the element and removed it from hashSet too[O(1)].
+
+3. Design your data structure(can use 1 or more existing data structyre) which supports these req:
+a) public void insert(int element)
+b) public void delete(int element)
+c) public int random()
+All these should be done in O(1). You may assume there are distinct elements
+
+Possible ans:
+Use a combination of List + HashMap
+
+List: To store the elements
+Map: Key as elem and value as index of storage
+
+*Insert Function:*
+Insert at next index in list. Also, store in map(elem + index)
+**NOTE:** If duplicates are also allowed, Map can be Map<Integer, List<Integer>> map (Key: elem, val: list of indices)
+
+*Delete Function:*
+First check if map conatins key. if not, we cannot delete since elem not present
+If present then,
+get the indices of the element to be removed from the map.
+In list, we directly cannot delete the element as the time complexity will be O(n) since the right elements have to be shifted.
+*Trick* : Swap the element with the last element in the list[O(1)].
+Remember to update the index value of the element in map which was at last position.[O(1), since only getting and putting back the new index] 
+Now, we can safely remove the element since it is at last index
+
+*Random function*
+Generate a random from 0 to list.size()-1 and return the value at that index.
+
+

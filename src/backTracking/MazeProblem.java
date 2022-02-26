@@ -79,7 +79,5 @@ public class MazeProblem {
 		if (c < ar[r].length-1)
 			pathRestrictions(p + "R", ar, r, c+1);
 	}
-	
-	
 
 }
