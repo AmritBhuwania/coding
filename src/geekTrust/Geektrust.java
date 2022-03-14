@@ -1,52 +1,91 @@
 package geekTrust;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class TameOfTrust {
+public class Geektrust {
 
 	static Map<String, Map<Character, Integer>> kingdom = new HashMap<>();
 	static Map<String, String> kingDomEmblemMap = kingdomEmblem();
+
+	private static int minAlliesSupport = 3;
+
 	public static void main(String[] args) {
 
-		System.out.println(-2%26);
-		TameOfTrust tameOfTrust = new TameOfTrust();
-		tameOfTrust.populateKingDomEmblem(kingdom);
+		Geektrust geekTrust = new Geektrust();
 
-		System.out.println((kingdom));
+		List<String []> input = geekTrust.parseInputFile(args);
 
-		String[][] input = {
-				{"AIR", "OWLAOWLBOWLC"},
-				{"LAND", "FDIXXSOKKOFBBMU"},
-				{"ICE", "MOMAMVTMTMHTM"},
-				{"WATER", "SUMMER IS COMING"},
-				{"FIRE", "AJXGAMUTA"}
-		};
+		geekTrust.populateKingdomEmblem();
 
-		int count = 0;
-		List<String> answers = new ArrayList<String>();
+		Set<String> answers = new LinkedHashSet<>();
 		answers.add("SPACE");
 
-		for (int i = 0; i < input.length; i++) {
-			boolean isAlly = tameOfTrust.isAlly(input[i][1], input[i][0]);
+		for (int i = 0; i < input.size(); i++) {
+			boolean isAlly = geekTrust.isAlly(input.get(i)[1], input.get(i)[0]);
 			if (isAlly) {
-				count++;
-				answers.add(input[i][0]);
+				answers.add(input.get(i)[0]);
 			}
 		}
 
-		if (count >= 3) {
+		geekTrust.displayOutput(answers);
+	}
 
-			System.out.println(answers);
+	private void displayOutput(Set<String> answers) {
+
+		List<String> finalAnswer = new ArrayList<String>(answers);
+		if (answers.size() > minAlliesSupport) {
+			for (int i = 0; i < answers.size(); i++) {
+
+				System.out.print(finalAnswer.get(i));
+				if (i != answers.size()-1) {
+					System.out.print(" ");
+				}
+			}
+
 		} else {
 			System.out.println("NONE");
 		}
+
 	}
 
-	private void populateKingDomEmblem(final Map<String, Map<Character, Integer>> kingdom) {
+	private List<String []> parseInputFile(String[] args) {
+
+		List<String []> list = new ArrayList<>();
+
+
+		if (args.length < 1) {
+			System.out.println("No input file passed. Please pass an input file.");
+			System.out.println("Usage: java GeekTrust 'input.txt'");
+			return list;
+		}
+
+		File file = new File(args[0]);
+		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+
+			String inputLine;
+
+			while ((inputLine = bufferedReader.readLine()) != null) {
+
+				String [] lineArr = inputLine.split(" ", 2);
+				list.add(lineArr);
+
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	private void populateKingdomEmblem() {
 
 		Set<String> keySet = kingDomEmblemMap.keySet();
 
@@ -79,9 +118,9 @@ public class TameOfTrust {
 		String emblem = kingDomEmblemMap.get(kingdomName);
 		String decodedMsg = decipher(encodedMsg, emblem.length());
 
-		System.out.println("Kingdom: " + kingdomName + ", emblem: " + emblem + ", decodedMsg: " + decodedMsg);
+		//System.out.println("Kingdom: " + kingdomName + ", emblem: " + emblem + ", decodedMsg: " + decodedMsg);
 
-		boolean hasMsgContainEmblem = false;
+		boolean doMsgContainEmblem = false;
 
 		Map<Character, Integer> charMap = kingdom.get(kingdomName);
 
@@ -96,12 +135,12 @@ public class TameOfTrust {
 			}
 
 			if (charMap.isEmpty()) {
-				hasMsgContainEmblem = true;
+				doMsgContainEmblem = true;
 				break;
 			}
 		}
 
-		return hasMsgContainEmblem;
+		return doMsgContainEmblem;
 
 	}
 
