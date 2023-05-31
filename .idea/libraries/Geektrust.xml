@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Geektrust">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/geekTrust/Geektrust.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
