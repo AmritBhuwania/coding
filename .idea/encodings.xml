@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/lib/junit-4.13.2.jar" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/lib/junit/junit/4.12" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/lib/junit/junit/4.12/src/main/java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/lib/junit/junit/4.12/src/main/resources" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/lib/junit/junit/4.13.2" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/lib/junit/junit/4.13.2/src/main/java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/lib/junit/junit/4.13.2/src/main/resources" charset="ISO-8859-1" />
+  </component>
+</project>

@@ -8,14 +8,13 @@ import java.util.Queue;
 /**
  * @author amrit
  * First Negative Number in every Window of Size K | Sliding Window
- * Link : https://youtu.be/uUXXEgK2Jh8
- *
+ * Link : <a href="https://youtu.be/uUXXEgK2Jh8">...</a>
  */
 public class FirstNegativeNum {
 
 	public static void main(String[] args) {
-		int ar[] = {-8, 2, 3, -6, 10};
-		int arr[] = {12, -1, -7, 8, -15, 30, 16, 28};
+		int[] ar = {-8, 2, 3, -6, 10};
+		int[] arr = {12, -1, -7, 8, -15, 30, 16, 28};
 		int k1 = 2;
 		int k2 = 3;
 
@@ -25,10 +24,10 @@ public class FirstNegativeNum {
 
 	private static void findFirstNegativeNumINEveryWindow(int[] ar, int k) {
 
-		Queue<Integer> q = new LinkedList<Integer>();
+		Queue<Integer> q = new LinkedList<>();
 
 		int start = 0, end = 0, size = ar.length;
-		List<Integer> answer = new ArrayList<Integer>();
+		List<Integer> answer = new ArrayList<>();
 
 		// till end reaches last element
 		while (end < size) {
