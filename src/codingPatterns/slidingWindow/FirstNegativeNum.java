@@ -1,4 +1,4 @@
-package slidingWindow;
+package codingPatterns.slidingWindow;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

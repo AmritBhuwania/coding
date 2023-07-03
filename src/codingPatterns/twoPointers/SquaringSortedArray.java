@@ -1,4 +1,4 @@
-package twoPointers;
+package codingPatterns.twoPointers;
 
 public class SquaringSortedArray {
 	

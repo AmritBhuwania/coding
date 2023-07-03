@@ -1,4 +1,4 @@
-package slidingWindow;
+package codingPatterns.slidingWindow;
 
 /**
  * Maximum Sum Subarray of Size K

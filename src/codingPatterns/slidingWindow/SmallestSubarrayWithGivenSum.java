@@ -1,4 +1,4 @@
-package slidingWindow;
+package codingPatterns.slidingWindow;
 
 /**
  * Smallest Subarray with a given sum
