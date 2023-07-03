@@ -29,30 +29,30 @@ public class TripletSumCloseToTarget {
 	}
 
 
-	private static void findPair(int[] ar, int sum, int left, List<Integer> ans, int diff) {
+	private static void findPair(int[] ar, int ele, int left, List<Integer> ans, int diff) {
 
 		int windowStart = left;
 		int windowEnd = ar.length-1;
-		int sumNow = 0;
+		int targetDiff = 0;
 
 		while (windowStart < windowEnd) {
-			
-			sumNow = Math.abs(Math.abs(ar[windowEnd] + ar[windowStart] + sum) - diff);
 
-			if (sumNow < answer) {
-				answer = Math.abs(ar[windowEnd] + ar[windowStart] + sum);
-				minimumDiff = Math.abs(ar[windowEnd] + ar[windowStart] + sum);
-				ans = (Arrays.asList(sum, ar[windowStart], ar[windowEnd]));
-				System.out.println("Root element : " + sum + ", array: " + ans);
-				windowEnd--;
-				windowStart++;
-			} else if (ar[windowEnd] + ar[windowStart] > sum) {
-				windowEnd--;
-			} else {
-				windowStart++;
+			targetDiff = diff - (ar[windowEnd] + ar[windowStart] + ele);
+
+			if (targetDiff == 0) {
+				System.out.println(diff - targetDiff);
 			}
-			//System.out.println("windowEnd: " + windowEnd + ", windowStart: " + windowStart);
+
+			if (Math.abs(targetDiff) < Math.abs(minimumDiff)) {
+				minimumDiff = targetDiff;
+			}
+
+			if (targetDiff > 0) {
+				windowStart++;
+			} else {
+				windowEnd--;
+			}
 		}
-		System.out.println(answer);
+		System.out.println(diff - minimumDiff);
 	}
 }

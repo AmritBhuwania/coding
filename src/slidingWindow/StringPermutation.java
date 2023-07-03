@@ -32,8 +32,8 @@ public class StringPermutation {
         for (windowEnd = 0; windowEnd < str.length(); ++windowEnd) {
             char rightChar = str.charAt(windowEnd);
             if (patternMap.containsKey(rightChar)) {
-                patternMap.put(rightChar, patternMap.get(rightChar) - 1);
-                if (patternMap.get(rightChar) == 0) {
+                patternMap.put(rightChar, patternMap.get(rightChar) - 1); // decrement the freq of matched char
+                if (patternMap.get(rightChar) == 0) { // char is completely matched
                     ++matched;
                 }
             }
@@ -42,7 +42,7 @@ public class StringPermutation {
                 return true;
             }
 
-            if (windowEnd + 1 >= pattern.length()) {
+            if (windowEnd + 1 >= pattern.length()) { // shrink window size
                 char leftChar = str.charAt(windowStart++);
                 if (patternMap.containsKey(leftChar)) {
                     if (patternMap.get(leftChar) == 0) {
