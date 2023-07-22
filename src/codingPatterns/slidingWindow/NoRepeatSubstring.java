@@ -15,11 +15,11 @@ public class NoRepeatSubstring {
 
 	public static void main(String[] args) {
 
-		int result = longestSubstringWithKDistinctCharacters("abcadefga");
+		int result = longestSubstringWithNoRepeatingCharacters("abcadefga");
 		System.out.println(result);
 	}
 
-	private static int longestSubstringWithKDistinctCharacters(String str) {
+	private static int longestSubstringWithNoRepeatingCharacters(String str) {
 
 		int windowStart = 0;
 		HashMap<Character, Integer> map = new HashMap<>();
