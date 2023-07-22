@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/coding.iml" filepath="$PROJECT_DIR$/coding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/junit/junit/3.8.1/junit.iml" filepath="$PROJECT_DIR$/lib/junit/junit/3.8.1/junit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/junit/junit/3.8.2/junit (1).iml" filepath="$PROJECT_DIR$/lib/junit/junit/3.8.2/junit (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/junit/junit/4.12/junit (2).iml" filepath="$PROJECT_DIR$/lib/junit/junit/4.12/junit (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/junit/junit/4.13.2/junit (3).iml" filepath="$PROJECT_DIR$/lib/junit/junit/4.13.2/junit (3).iml" />
+    </modules>
+  </component>
+</project>
