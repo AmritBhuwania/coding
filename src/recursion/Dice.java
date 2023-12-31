@@ -19,7 +19,7 @@ public class Dice {
 		}
 		
 		for (int i = 1; i <= target; ++i) {
-			dice(p + String.valueOf(i), target - i);
+			dice(p + i, target - i);
 		}
 	}
 }
