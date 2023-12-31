@@ -52,5 +52,5 @@ public class PermutationWithSpaces {
 
         return ans;
     }
-    
+
 }
