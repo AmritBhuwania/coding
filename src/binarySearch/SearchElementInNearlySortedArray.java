@@ -40,7 +40,7 @@ public class SearchElementInNearlySortedArray {
             } else if (mid - 1 >= start && input.get(mid - 1) == target) {
                 return mid-1;
 
-                // // check for array bound and the right side element as the element can be at (i+1) index
+                // check for array bound and the right side element as the element can be at (i+1) index
             } else if (mid + 1 <= end && input.get(mid + 1) == target) {
                 return mid+1;
 

@@ -21,7 +21,7 @@ public class RowColMartix {
 				};
 		
 		System.out.println(Arrays.toString(search(arr, 37)));
-		
+		System.out.println(Arrays.toString(search(arr, 23)));
 	}
 	
 	static int[] search(int[][] arr, int target) {
@@ -29,7 +29,7 @@ public class RowColMartix {
 		int row = 0;
 		int col = arr.length - 1;
 		
-		while(row < arr.length && col > 0) {
+		while(row < arr.length && col >= 0) {
 			if (arr[row][col] == target) {
 				return new int[] {row, col};
 			} else if (arr[row][col] < target) {
