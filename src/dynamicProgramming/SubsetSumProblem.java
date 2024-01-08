@@ -27,7 +27,7 @@ public class SubsetSumProblem {
 
         // base condition is equivalent to filling the initialization steps
         for (int i = 0; i < n + 1; ++i) {
-            for (int j = 0; j < target + 1; ++j) {
+            for (int j = 0; j <= target + 1; ++j) {
                 if (i == 0 || j == 0) {
                     matrix[i][j] = 0;
                 }

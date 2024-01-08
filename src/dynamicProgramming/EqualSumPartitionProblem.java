@@ -36,8 +36,8 @@ public class EqualSumPartitionProblem {
         boolean[][] matrix = new boolean[n + 1][sum + 1];
 
         // base condition is equivalent to filling the initialization steps
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < sum; ++j) {
+        for (int i = 0; i < n+1; ++i) {
+            for (int j = 0; j < sum+1; ++j) {
                 if (i == 0) {
                     matrix[i][j] = false;
                 }
@@ -55,6 +55,13 @@ public class EqualSumPartitionProblem {
                     matrix[i][j] = matrix[i - 1][j];
                 }
             }
+        }
+
+        for (int i = 0; i < n + 1; ++i) {
+            for (int j = 0; j < sum + 1; ++j) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
         }
 
         return matrix[n][sum];
