@@ -1,4 +1,4 @@
-package dynamicProgramming;
+package dynamicProgramming.knapsack;
 
 public class KnapSackTopDown {
 

@@ -1,4 +1,4 @@
-package dynamicProgramming;
+package dynamicProgramming.knapsack;
 
 /**
  * Link: https://youtu.be/_gPcYovP7wc?si=rie7KMMh8Pu3pK0Z

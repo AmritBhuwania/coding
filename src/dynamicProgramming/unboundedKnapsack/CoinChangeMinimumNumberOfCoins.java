@@ -1,4 +1,4 @@
-package dynamicProgramming;
+package dynamicProgramming.unboundedKnapsack;
 
 public class CoinChangeMinimumNumberOfCoins {
     public static void main(String[] args) {

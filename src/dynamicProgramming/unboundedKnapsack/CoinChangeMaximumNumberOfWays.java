@@ -1,4 +1,4 @@
-package dynamicProgramming;
+package dynamicProgramming.unboundedKnapsack;
 
 /**
  * Link: https://youtu.be/I4UR2T6Ro3w?si=u3-zvHL30p2xPl43
