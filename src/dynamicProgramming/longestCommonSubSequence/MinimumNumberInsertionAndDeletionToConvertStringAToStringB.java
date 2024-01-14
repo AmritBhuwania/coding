@@ -1,4 +1,4 @@
-package dynamicProgramming.lcs;
+package dynamicProgramming.longestCommonSubSequence;
 
 /**
  * https://youtu.be/-fx6aDxcWyg?si=44tEDgIRRLPcVqEc

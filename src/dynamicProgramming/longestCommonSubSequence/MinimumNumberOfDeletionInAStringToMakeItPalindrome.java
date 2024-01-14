@@ -1,8 +1,12 @@
-package dynamicProgramming.lcs;
+package dynamicProgramming.longestCommonSubSequence;
 
 /**
- * https://youtu.be/CFwCCNbRuLY?si=JCvRbky9_knTr2y6
- * Minimum number of deletions to make a string palindrome
+ * https://youtu.be/CFwCCNbRuLY?si=JCvRbky9_knTr2y6 OR
+ * https://youtu.be/AEcRW4ylm_c?si=T8KWmATE5q1hwzm_
+ *
+ * Minimum number of deletions to make a string palindrome OR,
+ * Minimum number of insertions to make a string palindrome
+ *
  * Given a string of size ‘n’. The task is to remove or delete minimum number of characters from the string so that the resultant string is palindrome.
  * Examples :
  * Input : aebcbda

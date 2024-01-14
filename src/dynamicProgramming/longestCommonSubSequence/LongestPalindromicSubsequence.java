@@ -1,21 +1,19 @@
-package dynamicProgramming.lcs;
+package dynamicProgramming.longestCommonSubSequence;
 
 /**
- * https://youtu.be/HrybPYpOvz0?si=IGvQkBnEC2qX7r5J
- *
- * Longest Common Substring(Dynamic Programming)
- * Given two strings ‘X’ and ‘Y’, find the length of the longest common substring.
- * Examples:
- * Input : X = “GeeksforGeeks”, y = “GeeksQuiz”
- * Output : 5
- * The longest common substring is “Geeks” and is of length 5.
+ * https://youtu.be/wuOOOATz_IA?si=VJQBvCLLvpMYpzcL
+ * Longest Palindromic Subsequence
+ * Given a sequence, find the length of the longest palindromic subsequence in it.
+ * Example :
+ * Input:"bbbab"
+ * Output:4
  */
-public class LargestCommonSubString {
+public class LongestPalindromicSubsequence {
 
     public static void main(String[] args) {
 
-        String x = "gbcdefg";
-        String y = "abcdefg";
+        String x = "agbcba";
+        String y = new StringBuilder(x).reverse().toString();
         int m = x.length(), n = y.length();
         int [][]matrix = new int[m + 1][n + 1];
 
@@ -44,7 +42,7 @@ public class LargestCommonSubString {
                 if (x.charAt(i-1) == y.charAt(j-1)) {
                     matrix[i][j] = 1 + matrix[i-1][j-1];
                 } else {
-                    matrix[i][j] = 0;
+                    matrix[i][j] = Math.max(matrix[i-1][j], matrix[i][j-1]);
                 }
             }
         }

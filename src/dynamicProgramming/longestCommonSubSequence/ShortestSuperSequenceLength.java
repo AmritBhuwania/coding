@@ -1,12 +1,14 @@
-package dynamicProgramming.lcs;
+package dynamicProgramming.longestCommonSubSequence;
 
 /**
- * Link: https://youtu.be/hR3s9rGlMTU?si=QN2yN4fmF1CxEj3M
- * Given two sequences, find the length of longest subsequence present in both of them.
- * A subsequence is a sequence that appears in the same relative order, but not necessarily contiguous.
- * For example, “abc”,  “abg”, “bdf”, “aeg”,  ‘”acefg”, .. etc are subsequences of “abcdefg”.
+ * https://youtu.be/823Grn4_dCQ?si=SW56IRQlnksxMuLe
+ * Shortest Common SuperSequence
+ * Given two strings str1 and str2, find the shortest string that has both str1 and str2 as subsequences.
+ * Examples:*
+ * Input:   str1 = "geek",  str2 = "eke"
+ * Output: "geeke"
  */
-public class LongestCommonSubsequenceTopDown {
+public class ShortestSuperSequenceLength {
     public static void main(String[] args) {
         String x = "abcdgh";
         String y = "abedfh";
@@ -16,12 +18,13 @@ public class LongestCommonSubsequenceTopDown {
         int [][]matrix = new int[m+1][n+1];
         for (int i = 0; i < m+1; ++i) {
             for (int j = 0; j < n+1; ++j) {
-               if (i == 0 || j == 0) {
-                   matrix[i][j]=0;
-               }
+                if (i == 0 || j == 0) {
+                    matrix[i][j]=0;
+                }
             }
         }
-        System.out.println(longestCommonSubsequenceRecursive(x, y, m, n, matrix));
+        // find LCS and then subtract from the sum of the length of the strings
+        System.out.println(m + n - longestCommonSubsequenceRecursive(x, y, m, n, matrix));
     }
 
     private static int longestCommonSubsequenceRecursive(String x, String y, int m, int n, int[][]matrix) {
@@ -47,3 +50,4 @@ public class LongestCommonSubsequenceTopDown {
         return matrix[m][n];
     }
 }
+

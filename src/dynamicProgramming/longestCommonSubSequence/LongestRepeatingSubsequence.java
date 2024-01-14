@@ -1,4 +1,4 @@
-package dynamicProgramming.lcs;
+package dynamicProgramming.longestCommonSubSequence;
 
 public class LongestRepeatingSubsequence {
     public static void main(String[] args) {

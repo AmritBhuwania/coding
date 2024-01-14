@@ -1,6 +1,4 @@
-package dynamicProgramming.lcs;
-
-import java.util.Arrays;
+package dynamicProgramming.longestCommonSubSequence;
 
 /**
  * Link: https://youtu.be/4Urd0a0BNng?si=QmZKrmEKnCA0DnkJ
