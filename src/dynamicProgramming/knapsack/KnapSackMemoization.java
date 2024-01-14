@@ -50,13 +50,11 @@ public class KnapSackMemoization {
             matrix[n][w] = Math.max(profit[n-1] + knapsack(weight, profit, w - weight[n-1], n-1, matrix),
                     knapsack(weight, profit, w , n-1, matrix));
 
-            return matrix[n][w];
-
         } else {
             // If weight of the nth item is more than Knapsack capacity W,
             // then this item cannot be included in the optimal solution
             matrix[n][w] = knapsack(weight, profit, w , n-1, matrix);
-            return matrix[n][w];
         }
+        return matrix[n][w];
     }
 }

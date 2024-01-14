@@ -30,6 +30,9 @@ public class MinimumSubsetSumDifference {
         }
 
         boolean[] lastRow = findSubSetSum(nums, sum, nums.length);
+//        for (int i = 0; i < lastRow.length; ++i) {
+//            System.out.print(lastRow[i] + " ");
+//        }
 
         for (int i = 0; i <= lastRow.length/2; ++i) {
             if (lastRow[i]) {
