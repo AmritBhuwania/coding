@@ -19,9 +19,10 @@ import java.util.Map;
 public class StringPermutation {
     public static void main(String[] args) {
 
-        System.out.println(findPermutation("iodbcaf", "dc"));
         System.out.println(findPermutation("iodbcaf", "abc"));
         System.out.println(findPermutation("bcdxabcdy", "bcdyabcdx"));
+        System.out.println(findPermutation("aaacb", "abc"));
+        System.out.println(findPermutation("odicf", "dc"));
     }
 
     private static boolean findPermutation(String str, String pattern) {
@@ -29,7 +30,7 @@ public class StringPermutation {
         int windowStart = 0, windowEnd, matched = 0;
         Map<Character, Integer> patternMap = new HashMap<>();
         for (char ch : pattern.toCharArray()) {
-            patternMap.compute(ch, (k, v)-> v == null ? 1 : v +1);
+            patternMap.compute(ch, (k, v)-> v == null ? 1 : v + 1);
         }
 
         for (windowEnd = 0; windowEnd < str.length(); ++windowEnd) {
@@ -45,7 +46,7 @@ public class StringPermutation {
                 return true;
             }
 
-            if (windowEnd + 1 >= pattern.length()) { // shrink window size
+            if (windowEnd - windowStart + 1 >= pattern.length()) { // shrink window size
                 char leftChar = str.charAt(windowStart++);
                 if (patternMap.containsKey(leftChar)) {
                     if (patternMap.get(leftChar) == 0) {
