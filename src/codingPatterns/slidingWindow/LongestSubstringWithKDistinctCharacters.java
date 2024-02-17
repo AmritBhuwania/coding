@@ -11,7 +11,7 @@ import java.util.HashMap;
  * Output: 4
  * Explanation: The longest substring with no more than '2' distinct characters is "araa".
  */
-public class LongestSubstringWithNoRepeatingCharacters {
+public class LongestSubstringWithKDistinctCharacters {
 
 	public static void main(String[] args) {
 

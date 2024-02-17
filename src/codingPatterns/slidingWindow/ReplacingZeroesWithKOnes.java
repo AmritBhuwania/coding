@@ -11,7 +11,7 @@ import java.util.List;
  * Output: 6
  * Explanation: Replace the '0' at index 5 and 8 to have the longest contiguous subarray of 1s having length 6.
  */
-public class ReplacingOnes {
+public class ReplacingZeroesWithKOnes {
 
     public static void main(String[] args) {
         System.out.println(findMaxLength(List.of(0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1), 2));

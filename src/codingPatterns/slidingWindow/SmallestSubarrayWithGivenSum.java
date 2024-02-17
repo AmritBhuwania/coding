@@ -14,8 +14,8 @@ public class SmallestSubarrayWithGivenSum {
 
 	public static void main(String[] args) {
 
-		int result = minSubArray(10,new int[] {6,4,1,3,12});
-		System.out.println(result);
+		int result = minSubArray(17,new int[] {16,4,1,3,12});
+		System.out.println("Ans:" + result);
 	}
 
 	/**
@@ -29,20 +29,17 @@ public class SmallestSubarrayWithGivenSum {
 
 		int windowStart = 0;
 		int windowSum = 0;
-		int len;
 		int length = Integer.MAX_VALUE;
 
 		for (int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
 			windowSum += arr[windowEnd];
 			System.out.println(windowSum);
-			while(windowSum >= max) {
-				System.out.println("here: " + windowSum);
-				windowSum -= arr[windowStart];
-				len = windowEnd - windowStart + 1;
-				windowStart++;
-				System.out.println("here: " + windowSum + ", len: " + len);
-				length = Math.min(len, length);
 
+			// shrink window until windowSum is smaller than max
+			while(windowSum >= max) {
+				length = Math.min(windowEnd - windowStart + 1, length);
+				windowSum -= arr[windowStart];
+				windowStart++;
 			}
 
 		}

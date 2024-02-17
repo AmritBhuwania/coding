@@ -18,7 +18,27 @@ public class MaximumSumSubarrayOfSizeK {
 		System.out.println(result);
 	}
 
-	private static int maxSubArray(int l, int[] js) {
+	private static int maxSubArray(int k, int[] ar) {
+
+		int windowStart = 0;
+		int maxSum = 0;
+		int currSum = 0;
+
+		for (int i = 0; i < ar.length; i++) {
+			currSum += ar[i];
+
+			if (i >= k-1) {
+				maxSum = Math.max(maxSum, currSum);
+				currSum -= ar[windowStart];
+				windowStart++;
+			}
+			System.out.println();
+
+		}
+		return maxSum;
+	}
+
+	private static int maxSubArray2(int l, int[] js) {
 
 		int windowStart = -1;
 		int maxSum = 0;
