@@ -72,5 +72,7 @@ public class SynchronisationProblems {
          * SO even though t2 needs to call increment2() a completely independent method, it will have to wait for
          * t1 to relinquish the lock. As a result the application would be slower
          */
+
+        new SynchronisationProblems().sampleMethod();
     }
 }

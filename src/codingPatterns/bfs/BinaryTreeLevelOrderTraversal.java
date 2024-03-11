@@ -15,12 +15,12 @@ public class BinaryTreeLevelOrderTraversal {
 
     public static void main(String args[]) {
         BinaryTreeLevelOrderTraversal binaryTreeLevelOrderTraversal = new BinaryTreeLevelOrderTraversal();
-        Node tree = new Node(12);
+        Node tree = new Node(1);
         tree.left = new Node(2);
         tree.right = new Node(3);
         tree.left.left = new Node(4);
         tree.left.right = new Node(5);
-        tree.right.right = new Node(1);
+        tree.right.right = new Node(6);
 
         System.out.println("Level order traversal of binary tree is: ");
         System.out.println(binaryTreeLevelOrderTraversal.printLevelOrder(tree));

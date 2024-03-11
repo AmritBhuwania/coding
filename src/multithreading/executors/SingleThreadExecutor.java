@@ -37,6 +37,7 @@ public class SingleThreadExecutor {
         for (int i = 0; i < 10 ; i++) {
             executor.execute(new Task(i));
         }
+
         // to shut executor
         //executor.shutdown();
         // Note that shutdown does the following

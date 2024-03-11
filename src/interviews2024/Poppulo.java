@@ -1,2 +1,4 @@
-package interviews2024;public class Poppulo {
+package interviews2024;
+
+public class Poppulo {
 }

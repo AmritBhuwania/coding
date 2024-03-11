@@ -14,12 +14,12 @@ public class ReverseLevelOrderTraversal {
 
     public static void main(String args[]) {
         ReverseLevelOrderTraversal reverseLevelOrderTraversal = new ReverseLevelOrderTraversal();
-        Node tree = new Node(12);
+        Node tree = new Node(1);
         tree.left = new Node(2);
         tree.right = new Node(3);
         tree.left.left = new Node(4);
         tree.left.right = new Node(5);
-        tree.right.right = new Node(1);
+        tree.right.right = new Node(6);
 
         System.out.println("Reverse level order traversal of binary tree is: ");
         System.out.println(reverseLevelOrderTraversal.printReverseLevelOrder(tree));

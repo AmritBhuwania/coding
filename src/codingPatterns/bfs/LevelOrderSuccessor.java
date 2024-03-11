@@ -1,8 +1,6 @@
 package codingPatterns.bfs;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 /**
@@ -21,7 +19,7 @@ public class LevelOrderSuccessor {
         tree.right.right = new Node(6);
 
         System.out.println("Level order traversal of binary tree is: ");
-        System.out.println(levelOrderSuccessor.levelOrderSuccessor(tree, 5));
+        System.out.println(levelOrderSuccessor.levelOrderSuccessor(tree, 1));
     }
 
     private Integer levelOrderSuccessor(Node tree, int key) {

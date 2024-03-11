@@ -42,6 +42,7 @@ public class AllocateMinimumNumberOfPages {
         int maxNumOfStudents = 3;
         int ans = findMinNumberOfPages(nums, maxNumOfStudents);
         System.out.println(ans);
+
     }
 
     private static int findMinNumberOfPages(int[] nums, int maxNumOfStudents) {

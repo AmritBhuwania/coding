@@ -18,6 +18,10 @@ public class Streams {
 		int max = list.stream().min((i1, i2)-> -i1.compareTo(i2)).get();
 		System.out.println("Min: " + min + ", Max: " + max);
 
+		min = list.stream().min(Integer::compareTo).get();
+		max = list.stream().max((i1, i2)-> -i1.compareTo(i2)).get();
+		System.out.println("Min: " + min + ", Max: " + max);
+
 		System.out.println("Ascending order of string : " + strs.stream().sorted((s1, s2) -> s1.compareTo(s2)).collect(Collectors.toList()));
 		System.out.println("Descending order of string : " + strs.stream().sorted((s1, s2) -> -s1.compareTo(s2)).collect(Collectors.toList()));
 

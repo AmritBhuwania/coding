@@ -10,9 +10,9 @@ public class Threads1To10Print {
 	public static void main(String[] args) {
 
 		Threads1To10Print testClass = new Threads1To10Print();
-		Thread t1 = new Thread(testClass.new Printer(0));
-		Thread t2 = new Thread(testClass.new Printer(1));
-		Thread t3 = new Thread(testClass.new Printer(2));
+		Thread t1 = new Thread(testClass.new Printer(1));
+		Thread t2 = new Thread(testClass.new Printer(2));
+		Thread t3 = new Thread(testClass.new Printer(3));
 
 		t1.start();
 		t2.start();
@@ -33,7 +33,7 @@ public class Threads1To10Print {
 			try {
 				while (count <= 20) {
 					synchronized (object) {
-						if (count % 3 != threadId) {
+						if (count % 3 != threadId % 3) {
 							object.wait();
 						} else {
 							System.out.println("Thread " + threadId + " printed " + count);

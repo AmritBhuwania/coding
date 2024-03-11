@@ -13,6 +13,9 @@ public class BaseChildConstructor extends Base{
 		
 		System.out.println("Calling child construct");
 		BaseChildConstructor childConstructor = new BaseChildConstructor();
+
+		System.out.println("Calling child construct with base reference");
+		Base childConstructorWithBaseRef = new BaseChildConstructor();
 	}
 	
 

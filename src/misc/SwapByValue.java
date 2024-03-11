@@ -9,6 +9,7 @@ public class SwapByValue {
 		i = j;
 		j = temp;
 	}
+
 	public static void main(String[] args) 
 	{
 		Integer i = new Integer(10);
