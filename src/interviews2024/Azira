@@ -1,0 +1,70 @@
+Given an array of positive integers and a number ‘S,’
+ find the length of the smallest contiguous subarray whose sum is greater than or equal to 'S'.
+ Return 0 if no such subarray exists.
+
+Input: [2, 1, 5, 2, 3, 2], S=7
+Output: 2
+Explanation: The smallest subarray with a sum greater than or equal to '7' is [5, 2].
+
+
+
+public int findSmallestSubArray(List<Integer> input, int k) {
+
+    int start = 0, end = 0, size = input.size();
+    int ans = Integer_MAXVALUE;
+    int currSum = 0;
+    int probAns = 0;
+
+    for (int end = 0; end < size; ++end) {
+        currSum += input.get(end);
+        while (currSum >= k) {
+            probAns = end - start + 1;
+            currSum -= input.get(start++);
+        }
+        ans = Math.min(ans, probAns);
+    }
+    return ans;
+}
+
+
+Given an unsorted array of numbers, find the ‘K’ largest numbers in it.
+
+Input: [3, 1, 5, 12, 2, 11], K = 3
+Output: [5, 12, 11]
+
+
+
+fib(n) = fib(n-1) + fib(n-2)
+
+fib(6) = fib(4) + fib(5)
+fib(5) = fib(4) + fib(3)
+
+
+
+List<Payments>
+
+
+-fromAddress
+-toAddress
+-amount
+-paymentType
+
+
+API rate limiter (library)
+
+A -> 1 min/100 req
+
+
+Object:
+Integer,
+timestamp
+
+ConcurentHashMap<UserId, Object>
+
+
+
+
+
+
+
+

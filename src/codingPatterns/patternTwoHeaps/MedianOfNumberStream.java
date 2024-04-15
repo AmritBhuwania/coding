@@ -12,7 +12,7 @@ import java.util.PriorityQueue;
 public class MedianOfNumberStream {
 
     PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> (b-a));
-    PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> (a-b));;
+    PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> (a-b));
 
     public static void main(String[] args) {
         MedianOfNumberStream medianOfNumberStream = new MedianOfNumberStream();

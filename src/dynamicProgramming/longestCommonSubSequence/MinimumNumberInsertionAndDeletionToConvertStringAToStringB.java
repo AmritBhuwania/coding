@@ -31,7 +31,7 @@ public class MinimumNumberInsertionAndDeletionToConvertStringAToStringB {
         System.out.println("removalCount: " + removalCount + ", additionCount: " + additionCount);
 
         x = "geeksforgeeks";
-        y = "geeksb";
+        y = "geeks";
         m = x.length();
         n = y.length();
 

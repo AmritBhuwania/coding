@@ -22,7 +22,8 @@ public class MakeBstValid {
 		makeBstValid.printTree(root);
 
 		// pass the parent node also to the current node to handle the edge case 
-		List<ParentChildNode> nodes = makeBstValid.findInValidNode(null, root, Integer.MIN_VALUE, Integer.MAX_VALUE, new ArrayList<ParentChildNode>());
+		List<ParentChildNode> nodes = makeBstValid.findInValidNode(null, root, Integer.MIN_VALUE,
+				Integer.MAX_VALUE, new ArrayList<>());
 
 		for (ParentChildNode childNode: nodes) {
 			System.out.println(childNode);
@@ -38,7 +39,8 @@ public class MakeBstValid {
 		makeBstValid.printTree(root);
 	}
 
-	private List<ParentChildNode> findInValidNode(Node parent, Node root, int min, int max, List<ParentChildNode> inValidNodes) {
+	private List<ParentChildNode> findInValidNode(Node parent, Node root, int min, int max,
+												  List<ParentChildNode> inValidNodes) {
 
 		if (root == null) {
 			return inValidNodes;
@@ -94,6 +96,7 @@ class ParentChildNode {
 		return "ParentChildNode [parent=" + parent + ", child=" + child + "]";
 	}
 }
+
 
 class Node {
 	int data;

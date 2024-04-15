@@ -14,7 +14,7 @@ public class EqualSumPartitionProblem {
 
     public static void main(String[] args) {
 
-        int []nums = new int[]{1,5, 11, 5};
+        int []nums = new int[]{1, 5, 11, 5};
         System.out.println(isEqualSumPartitionPossible(nums));
 
     }

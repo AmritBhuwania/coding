@@ -1,0 +1,97 @@
+https://leetcode.com/problems/time-based-key-value-store/description/
+
+
+class TimeMap {
+
+
+   private Map<String, List<Value>> map;
+   public TimeMap() {
+      map = new HashMap<>();
+   }
+
+   public void set(String key, String value, int timestamp) {
+       if (map.containsKey(key)) {
+           List<Value> values = map.get(key);
+           values.add(new Value(value, timestamp));
+           map.put(key, values);
+       } else {
+
+           map.put(key, List.of(new Value(value, timestamp)));
+       }
+   }
+
+   public String get(String key, int timestamp) {
+       if (map.containsKey(key)) {
+           List<Value> values = map.get(key);
+           int index = binarySearch(values, timestamp);
+           return values.get(index).get(val);
+       } else {
+           return null;
+       }
+   }
+
+
+   public int getLowerBoundIndex(List<Value> values, int time) {
+
+
+       int start = 0;
+       int end = values.size();
+       int mid;
+       while (start < end) {
+           mid = start + (end - start)/2;
+
+
+           if (values.get(mid) == time) {
+               return mid;
+           } else if (values.get(mid) < time) {
+               start = mid;
+           } else {
+               end = mid - 1;
+           }
+       }
+       return end;
+
+
+   }
+}
+
+
+class Value {
+   String val;
+   int time;
+}
+
+
+/**
+* Your TimeMap object will be instantiated and called as such:
+* TimeMap obj = new TimeMap();
+* obj.set(key,value,timestamp);
+* String param_2 = obj.get(key,timestamp);
+*/
+
+
+
+Consider a scenario where you have a relational database schema for an e-commerce platform with three main tables: products, orders, and users. The products table contains information about various products available on the platform, the orders table tracks details of customer orders, and the users table stores user information.
+
+Assume that the products table has the following columns: product_id, product_name, category_id, and the orders table has columns: order_id, user_id, product_id, order_date. You're asked to optimize this query for performance by utilizing composite indexes.
+
+Could you Please provide the SQL query and explain your choices for composite indexes based on the query's filtering conditions and join operations.
+
+
+
+Task:- Find total orders for any particular category(lets say desired_category_id).
+
+Composite index:
+In product table: (product_id, category_id)
+In order table: (Product_id)
+
+Select count(*) from orders as o join products p where  p.product_id = o.productId and p.catergory_id = desired_category_id;
+
+
+Explain the significance of transaction management in Spring Boot applications, focusing on the @Transactional annotation. Additionally, elaborate on the various isolation levels supported by transaction management and discuss scenarios where each isolation level is most appropriate.
+
+
+Explain the concept of event-driven microservices architecture, its key components, benefits, and challenges. Additionally, describe how you would design and implement such an architecture for a platform like Cars24
+
+Explain the concepts of Kafka partitions, rebalancing, and the significance of partition keys in a Kafka setup. Additionally, can you demonstrate how you would implement a partition key strategy in a Java Kafka producer application?
+

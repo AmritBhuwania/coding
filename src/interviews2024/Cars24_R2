@@ -1,0 +1,129 @@
+Design Splitwise
+
+
+
+Splitwise is an application that facilitates bill splitting and expense management among groups of users. Design LLD and Discuss the Points below.
+
+1.
+
+Requirements:
+
+Implement user authentication and authorization mechanisms.
+Design modules for group management, expense tracking, and debt settlement.
+Ensure efficient database access and management. (entity)
+Handle concurrent access and ensure data consistency. (isolation levels on Db level)
+Design RESTful APIs for seamless communication with the frontend. (contracts/ I/Fs)
+Ensure code maintainability, scalability, and testability.
+
+
+Abstract class Account
+-accountId
+-accountStatus
+-emailId
+-phoneNumber
++isActive(): boolean
+
+
+
+Class Member  extends Account
+
+-password
+-userId
+-profilePath
++makeAGroup(List<Members>)
++ addMemberTogroup(MemberId)
++removeMember(memberId)
++addExpense(GroupId, amount, SplitExpenseType)
++payDebt(fromMember, toMember, groupId, amount);
++editExpense(ExpenseId, updatedAmount)
++removeExpense(groupId, ExpenseId);
+
+
+Class Group
+-groupId
+-groupName
+-groupDescription
+-List<MemberId>
++ getListOfMembers(groupId)
++ getGroupExpenseSummary(groupId)
++ changeGroupName(id, )
++ changeGroupDesp()
+
+
+Interface SplitExpenseType
+
++splitExpense(ExpenseId, GroupId, amount );
++splitExpense(ExpenseId, GroupId, List<Member>member, amount )
+
+
+Class EqualSplitExpenseType implements SplitExpenseType {
++splitExpense(ExpenseId, GroupId, amount );
++splitExpense(ExpenseId, GroupId, List<Member>member, amount )
+}
+
+
+Class PercentageSplitExpenseType implements SplitExpenseType {
+
++splitExpense(ExpenseId, GroupId, amount );
++splitExpense(ExpenseId, GroupId, List<Member>member, amount )
+}
+
+
+Class RatioSplitExpenseType implements SplitExpenseType {
+
++splitExpense(ExpenseId, GroupId, amount );
++splitExpense(ExpenseId, GroupId, List<Member>member, amount )
+}
+
+
+Class Expense {
+expenseId;
+fromMemberId;
+Amount;
+Description
+groupId
+getExpense(expenseId)
+}
+
+
+Authentication {
+-userid,
+-token,
+ttl
+}
+
+expenseId
+{map<member, double>}
+
+
+interceptor
+
+
+add in to group
+
+
+
+
+Analyze the pros and cons of using environment variables vs. property files for Spring Boot configuration. When would you choose one over the other?
+
+
+Explain the principles behind Spring Boot's "starter dependencies" and their advantages in dependency management.
+
+Define transactions using the ACID properties (Atomicity, Consistency, Isolation, Durability). Explain the importance of transactions in maintaining data integrity in multi-user environments.
+
+Discuss trade-offs between serializability and performance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

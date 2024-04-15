@@ -5,7 +5,7 @@ public class Threads1To10Print {
 
 	private volatile Integer count = 1;
 
-	private Object object = new Object();
+	private final Object object = new Object();
 
 	public static void main(String[] args) {
 
