@@ -1,0 +1,48 @@
+// We need to design a cloud file storage system. It would allow users to manage their files and share to other users.
+// identify the APIs needed, define the req/ res and also suggest the best infrastructure components that can support this system.
+
+
+
+1. auth & authorizatiion
+2. generate a link for file
+3. Give permissions & list of persons
+4. notification
+
+boolean authentication(UserId, password);
+
+Actions[] authorization(userId, String filepath);
+
+boolean addFile(userId, fileBytes[], metadata); // google drive, AWS S3
+boolean removeFile(filepath);
+fileBytes[] getFile(User userId, String filepath);
+
+
+String generateLinkForFile(String Filepath, Actions[]); //unique tiny-url
+ActionList[] removeAccess(filePath, user, removeActionList[]);
+
+void shareFileLink(String fileLink, List<Users> users);
+
+boolean sendNotification(User sender, List<Users> users, String Subject, String  fileLink); // Kafka,  SQS-SNS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

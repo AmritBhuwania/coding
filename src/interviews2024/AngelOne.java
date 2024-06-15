@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class AngelOne {
     public static void main(String[] args) {
-        String input = "cbaebacbcad";
+        String input = "abcabac";
         String pattern = "abc";
 
         Map<Character, Integer> patterMap = new HashMap<>();

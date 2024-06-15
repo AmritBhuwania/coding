@@ -68,9 +68,9 @@ public class SearchElementInRotatedSortedArray {
 
                 // 1st half is sorted, answer lies in 2nd half
             } else if (input.get(start) < input.get(mid)) {
-                start = mid - 1;
+                start = mid + 1;
             } else {
-                end = mid + 1;
+                end = mid - 1;
             }
         }
         return mid;

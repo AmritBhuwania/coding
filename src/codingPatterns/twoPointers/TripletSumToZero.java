@@ -8,7 +8,7 @@ public class TripletSumToZero {
 
 	public static void main(String[] args) {
 
-		System.out.println(TripletSumToZero.findTriplets(new int[] {-3,-4, 0, 3,-6, 1, 5, -2,3, -3, 2, 0, 2,-6, 3, 5, 1,8}));
+		System.out.println(TripletSumToZero.findTriplets(new int[] {-1, 0, 1, 2, -1, -4}));
 	}
 
 
@@ -17,9 +17,9 @@ public class TripletSumToZero {
 		Arrays.sort(ar);
 		List<List<Integer>> ans = new ArrayList<>();
 		for (int i = 0; i < ar.length -2 ; i++) {
-			if (ar[i] == ar[i+1]) {
+			if (i > 0 && ar[i] == ar[i-1]) {
 				continue;
-			}
+		}
 			findPair (ar, -ar[i], i + 1, ans);
 		}
 

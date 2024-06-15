@@ -1,8 +1,6 @@
 package java8;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -39,8 +37,64 @@ public class Streams {
 		Arrays.stream(array).forEach(System.out::print);
 		System.out.println("\n------");
 		Stream.of(array).forEach(System.out::print);
+		System.out.println("\n------");
 		
 		Arrays.stream(array).collect(Collectors.toList());
-		 
-	} 
+
+
+		Map<String, Integer> map = new HashMap<>();
+		map.put("apple", 5);
+		map.put("banana", 2);
+		map.put("orange", 8);
+		map.put("grape", 3);
+
+		// Sort the map by values
+		Map<String, Integer> sortedMap = map.entrySet().stream()
+				.sorted(Map.Entry.comparingByValue())
+				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+						(oldValue, newValue) -> oldValue, LinkedHashMap::new));
+
+		// Print the sorted map
+		sortedMap.forEach((key, value) -> System.out.println(key + ": " + value));
+
+
+		String[] arr = {"Kstr", "Vstr", "V33", "Kstr2", "V24"};
+
+
+
+		Map<String, String> resultMap = Arrays.stream(arr)
+				.filter(s -> s.startsWith("K"))
+				.collect(HashMap::new,
+						(m, key) -> m.put(key, getValue(key, arr)),
+						HashMap::putAll);
+
+		System.out.println(resultMap);
+	}
+
+	private static String getValue(String key, String[] array) {
+		StringBuilder valueBuilder = new StringBuilder();
+		boolean keyFound = false;
+		int currentKIndex = -1;
+		int keyIndex = -1;
+		for (int i = 0; i < array.length; i++) {
+
+			if (array[i].startsWith("K")) {
+				currentKIndex = i;
+			}
+			if (array[i].equals(key)) {
+				keyFound  = true;
+				keyIndex = i;
+			}
+
+			if (keyFound && currentKIndex == keyIndex) {
+				if (array[i].startsWith("V")) {
+					valueBuilder.append(array[i]);
+					if (i + 1 < array.length && array[i + 1].startsWith("V")) {
+						valueBuilder.append("_");
+					}
+				}
+			}
+        }
+		return valueBuilder.toString();
+	}
 }
