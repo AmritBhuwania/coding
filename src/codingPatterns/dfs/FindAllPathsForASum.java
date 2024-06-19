@@ -31,7 +31,7 @@ public class FindAllPathsForASum {
         currentPath.add(node.data);
 
         if (node.data == sum && node.left == null && node.right == null) {
-            // we need to create a copy since currentPath object is finally becoming empty bcoz of L37 currentPath.removeLast();
+            // we need to create a copy since currentPath object is finally becoming empty bcoz of L40 currentPath.removeLast();
             allPaths.add(List.copyOf(currentPath));  // OR, allPaths.add(new ArrayList<>(currentPath));
         } else {
             findAllPathsForASum(node.left, sum - node.data, currentPath, allPaths);
