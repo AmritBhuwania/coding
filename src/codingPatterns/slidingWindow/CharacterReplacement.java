@@ -31,6 +31,7 @@ public class CharacterReplacement {
 
             char current = input.charAt(end);
             map.compute(current, (key, val) -> val == null ? 1 : val + 1);
+            // OR map.put(current, map.getOrDefault(current, 0) + 1);
             maxRepeatLetterCount = Math.max(maxRepeatLetterCount, map.get(current));
 
             /*
