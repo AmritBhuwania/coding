@@ -33,7 +33,8 @@ public class CountPathsForASum {
         }
 
         currentPath.add(node.data);
-        int currSum = 0, count = 0;
+        long currSum = 0; // avoid integer overflow
+        int count = 0;
 
         ListIterator<Integer> listIterator = currentPath.listIterator(currentPath.size());
         while (listIterator.hasPrevious()) {
